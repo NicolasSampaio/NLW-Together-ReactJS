@@ -18,13 +18,6 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 🚀 Como executar
 
-Clone o projeto e acesse a pasta do mesmo.
-
-```bash
-$ git clone https://github.com/NicolasSampaio/NLW-Together-ReactJS.git
-$ cd nlw-06-reactjs
-```
-
 Para iniciá-lo, siga os passos abaixo:
 ```bash
 # Instalar as dependências
@@ -53,6 +46,19 @@ Você pode visualizar o layout do projeto através do link abaixo:
 Lembrando que você precisa ter uma conta no [Figma](http://figma.com/).
 
 
+## 🤠 To-Do
+Essa aplicação foi feita na semana da nlw acompanhando as video-aulas, criei essa lista para apontar melhorias
+- [x] Ao criar uma sala ser redirecionado como admin
+- [x] Clicar na imagem e ir para a home
+- [x] Não haver perguntas 
+- [x] Entrar na sala e reconhecer que sou admin
+- [ ] Sair do Realtime e utilizar firestore
+- [ ] Possibilitar a pessoa escolher o nome da sala utilizado para conseguir entrar
+- [ ] Refatorar o html que tá sendo usado pelo componente de admin e user normal, e mesclar os 2 componentes em um só para evitar código duplicado
+- [ ] Corrigir o permissionamento de admin que foi feita usando params(😥😥😥)
+- [ ] Adicionar responsividade
+- [ ] PWA
+
 ---
 
-Feito com 💜 by Rocketseat 👋🏻 [Participe da nossa comunidade](https://discord.gg/gKUVrzrPrU)
+Feito com 💜 with Rocketseat 👋🏻 [Participe da nossa comunidade](https://discord.gg/gKUVrzrPrU)
