@@ -46,18 +46,58 @@ Você pode visualizar o layout do projeto através do link abaixo:
 Lembrando que você precisa ter uma conta no [Figma](http://figma.com/).
 
 
-## 🤠 To-Do
-Essa aplicação foi feita na semana da nlw acompanhando as video-aulas, criei essa lista para apontar melhorias
+## 😏 Para o Nicolas do futuro
+
+Foram utilizados os seguintes comandos, e instalados as seguintes bibliotecas.
+
+
+```bash
+# Criando projeto React
+$ yarn create react-app letmeask --template typescript
+```
+```bash
+# SDK Firebase
+$ yarn add firebase
+```
+```bash
+# Instalando sass
+$ yarn add node-sass@^5.0.0
+```
+```bash
+# Biblioteca de roteamento para React
+$ yarn add react-router-dom 
+```
+```bash
+# Pacote de types para react-router-dom funcionar com typescript
+$ yarn add @types/react-router-dom 
+```
+```bash
+# Pacote para usar classe css de forma dinâmica(ng-class)
+$ yarn add classnames
+```
+```bash
+# Pacote de ferramentas para hospedar no firebase
+$ npm install -g firebase-tools
+```
+
+
+## 🤠 Must-Have (Lista pessoal)
 - [x] Ao criar uma sala ser redirecionado como admin
 - [x] Clicar na imagem e ir para a home
-- [x] Não haver perguntas 
+- [x] Quando não haver perguntas exibir uma imagem
 - [x] Entrar na sala e reconhecer que sou admin
-- [ ] Sair do Realtime e utilizar firestore
-- [ ] Possibilitar a pessoa escolher o nome da sala utilizado para conseguir entrar
 - [ ] Refatorar o html que tá sendo usado pelo componente de admin e user normal, e mesclar os 2 componentes em um só para evitar código duplicado
 - [ ] Corrigir o permissionamento de admin que foi feita usando params(😥😥😥)
 - [ ] Adicionar responsividade
+
+## 😍 Nice-To-Have (Lista pessoal)
+Essa aplicação foi feita na semana da nlw acompanhando as video-aulas, criei essa lista para apontar melhorias
+- [ ] Sair do Realtime e utilizar firestore
+- [ ] Possibilitar a pessoa escolher o nome da sala utilizado para conseguir entrar
 - [ ] PWA
+- [ ] Darkmode
+- [ ] Biblioteca CSS - Styled Components
+- [ ] EsLint, Prettier
 
 ---
 
