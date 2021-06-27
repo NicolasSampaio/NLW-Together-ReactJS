@@ -1,16 +1,16 @@
 import { FormEvent, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 
-import { Button } from "../components/Button";
+import { Button } from "../../components/Button/Button";
 
-import { useAuth } from "../hooks/useAuth";
+import { useAuth } from "../../hooks/useAuth";
 
-import { database } from "../services/firebase";
+import { database } from "../../services/firebase";
 
-import illustrationImg from "../assets/images/illustration.svg";
-import logoImg from "../assets/images/logo.svg";
+import illustrationImg from "../../assets/images/illustration.svg";
+import logoImg from "../../assets/images/logo.svg";
 
-import "../styles/auth.scss";
+import "./auth.scss";
 
 export function NewRoom() {
 	const { user } = useAuth();
@@ -31,7 +31,7 @@ export function NewRoom() {
 			authorId: user?.id,
 		});
 
-		history.push(`/rooms/${firebaseRoom.key}`);
+		history.push(`/admin/rooms/${firebaseRoom.key}`);
 	}
 
 	return (
@@ -42,7 +42,9 @@ export function NewRoom() {
 					alt="Ilustração simbolizando perguntas e respostas"
 				/>
 				<strong>Crie salas de Q{"&"}A ao-vivo </strong>
-				<p>Tire as dúvidas da sua audiência em tempo-real</p>
+				<p>
+					Tire as dúvidas da sua audiência em tempo-real
+				</p>
 			</aside>
 
 			<main>
@@ -53,7 +55,9 @@ export function NewRoom() {
 						<input
 							type="text"
 							placeholder="Nome da sala"
-							onChange={(event) => setNewRoom(event.target.value)}
+							onChange={(event) =>
+								setNewRoom(event.target.value)
+							}
 							value={newRoom}
 						/>
 

@@ -1,17 +1,17 @@
 import { useHistory } from "react-router";
 import { FormEvent, useState } from "react";
 
-import { Button } from "../components/Button";
+import { Button } from "../../components/Button/Button";
 
-import { database } from "../services/firebase";
+import { database } from "../../services/firebase";
 
-import { useAuth } from "../hooks/useAuth";
+import { useAuth } from "../../hooks/useAuth";
 
-import illustrationImg from "../assets/images/illustration.svg";
-import logoImg from "../assets/images/logo.svg";
-import googleIconImg from "../assets/images/google-icon.svg";
+import illustrationImg from "../../assets/images/illustration.svg";
+import logoImg from "../../assets/images/logo.svg";
+import googleIconImg from "../../assets/images/google-icon.svg";
 
-import "../styles/auth.scss";
+import "./auth.scss";
 
 export function Home() {
 	const history = useHistory();
@@ -47,7 +47,13 @@ export function Home() {
 			return;
 		}
 
-		history.push(`/rooms/${roomCode}`);
+		//history.push(`/rooms/${roomCode}`);
+		if (user?.id === roomRef.val().authorId) {
+			history.push(`/admin/rooms/${roomCode}`);
+		}
+		else{
+			history.push(`/rooms/${roomCode}`);
+		}
 	}
 
 	return (

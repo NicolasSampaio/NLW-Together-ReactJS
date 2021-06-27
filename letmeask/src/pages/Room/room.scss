@@ -12,6 +12,7 @@
 
 			> img {
 				max-height: 45px;
+				cursor: pointer;
 			}
 
 			> div {
@@ -49,6 +50,14 @@
 				font-weight: 500;
 				font-size: 14px;
 			}
+		}
+
+		.empty-question {
+			display: flex;
+			justify-content: center;
+			width: 100%;
+			flex-direction: column;
+			align-items: center;
 		}
 
 		form {

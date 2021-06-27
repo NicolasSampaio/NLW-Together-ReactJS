@@ -1,26 +1,28 @@
 import { FormEvent, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 
-import { Button } from "../components/Button";
-import { Question } from "../components/Question/Question";
-import { RoomCode } from "../components/RoomCode";
+import { Button } from "../../components/Button/Button";
+import { Question } from "../../components/Question/Question";
+import { RoomCode } from "../../components/RoomCode/RoomCode";
 
-import { useAuth } from "../hooks/useAuth";
-import { useRoom } from "../hooks/useRoom";
+import { useAuth } from "../../hooks/useAuth";
+import { useRoom } from "../../hooks/useRoom";
 
-import { database } from "../services/firebase";
+import { database } from "../../services/firebase";
 
-import logoImg from "../assets/images/logo.svg";
+import logoImg from "../../assets/images/logo.svg";
+import emptyQuestionsImg from "../../assets/images/empty-questions.svg";
 
-import "../styles/room.scss";
+import "./room.scss";
 
 type RoomParams = {
 	id: string;
 };
 
 export function Room() {
+	const history = useHistory();
 	const params = useParams<RoomParams>();
-	const { user } = useAuth();
+	const { user, signInWithGoogle } = useAuth();
 	const [newQuestion, setNewQuestion] = useState("");
 	const roomId = params.id;
 
@@ -79,7 +81,11 @@ export function Room() {
 		<div id="page-room">
 			<header>
 				<div className="content">
-					<img src={logoImg} alt="LetMeAsk" />
+					<img
+						src={logoImg}
+						alt="LetMeAsk"
+						onClick={() => history.push("/")}
+					/>
 					<RoomCode code={roomId} />
 				</div>
 			</header>
@@ -115,14 +121,16 @@ export function Room() {
 						) : (
 							<span>
 								Para enviar uma pergunta,{" "}
-								<button>faça seu login</button>.
+								<button onClick={signInWithGoogle} >faça seu login</button>.
+								{/* <button onClick={() => signInWithGoogle()} >faça seu login</button>. */}
 							</span>
 						)}
 						<Button type="submit" disabled={!user}>
 							Enviar pergunta
 						</Button>
 					</div>
-
+				</form>
+				{questions.length !== 0 ? (
 					<div className="question-list">
 						{questions.map((question) => {
 							return (
@@ -171,7 +179,23 @@ export function Room() {
 							);
 						})}
 					</div>
-				</form>
+				) : (
+					<>
+						<div className="empty-question">
+							<img
+								src={emptyQuestionsImg}
+								alt="Sem perguntas"
+								width="150"
+								height="150"
+							/>
+							<h3>Nenhuma pergunta por aqui...</h3>
+							<p>
+								Envie o código desta sala para seus amigos e
+							</p>
+							<p>comece a responder perguntas!</p>
+						</div>
+					</>
+				)}
 			</main>
 		</div>
 	);
