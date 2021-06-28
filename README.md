@@ -8,6 +8,10 @@
 
 <br>
 
+## 💻 Aplicação Hospedada
+https://letmeask-8a45d.web.app/
+
+
 ## 🧪 Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
@@ -50,6 +54,9 @@ Lembrando que você precisa ter uma conta no [Figma](http://figma.com/).
 
 Foram utilizados os seguintes comandos, e instalados as seguintes bibliotecas.
 
+
+Documentação do creat-react-app
+https://create-react-app.dev/docs/getting-started
 
 ```bash
 # Criando projeto React
